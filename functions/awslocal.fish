@@ -1,3 +1,4 @@
 function awslocal
-				 aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566
+	  set -q LOCALHOST_HOST; or set LOCALHOST_HOST "http://localhost:4566"
+    aws --endpoint-url=$LOCALHOST_HOST
 end
